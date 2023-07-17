@@ -8,14 +8,18 @@
 
 int main(void)
 {
-	char up;
+	int op;
 
-	for (up = 'a'; up <= 'z'; up++)
-		putchar(up);
-	for (up = 'A'; up <= 'z'; up++)
-		putchar(up);
+	for (op = 97; op <= 122; op++)
+	{
+		putchar(op);
+	}
+	for (op = 65; op <= 90; op++)
+	{
+		putchar(op);
+	}
 	putchar('\n');
 
-	return(0);
+	return (0);
 
 }

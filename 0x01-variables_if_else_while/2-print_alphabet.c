@@ -9,11 +9,11 @@
 int main(void)
 {
 
-	char Ab;
+	int op;
 
-	for (Ab = 'a'; Ab <= 'z'; Ab++)
+	for (op = 97; op <= 122; op++)
 	{
-		putchar(Ab);
+		putchar(op);
 	}
 	putchar('\n');
 
