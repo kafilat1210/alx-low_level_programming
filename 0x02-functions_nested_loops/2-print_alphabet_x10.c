@@ -1,20 +1,22 @@
 #include "main.h"
 
 /**
- *print_alphabet_x10 - Entry point of alphabet x10
- *Return: always void (success)
- */
+  *print_alphabet_x10 - prints the value of the alphabet ten times
+  *
+  *Return: Always void (success)
+  */
 
 void print_alphabet_x10(void)
 {
-	int a = 0, i;
+	int a = 0;
+	char f;
 
-	if (a <= 9)
+	while (a < 10)
 	{
 		a++;
-		for (i = 97; i <= 122; i++)
+		for (f = 97; f <= 122; f++)
 		{
-			_putchar(i);
+			_putchar(f);
 		}
 		_putchar('\n');
 	}
