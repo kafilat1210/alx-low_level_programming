@@ -1,18 +1,17 @@
 #include "main.h"
 
 /**
- *_abs - Entry point
- *@c: integer value
- *
- *Return; Always 0
- */
+  *_abs - entry point for the code
+  *@n: integer value
+  *
+  *Return: always 0
+  */
 
-int abs(int n)
+int _abs(int n)
 {
 	if (n < 0)
 	{
-		n  = -1;
-
+		n *= -1;
 	}
 	return (n);
 }
