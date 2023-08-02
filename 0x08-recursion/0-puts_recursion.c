@@ -7,15 +7,15 @@
  *@s:This is the given string
  */
 
-void -puts_recursion(char *s)
+void _puts_recursion(char *s)
 {
 	if (*s)
 	{
-		-putschar(*s);
+		_putchar(*s);
 		_puts_recursion(s + 1);
 	}
 	else
 	{
-		-putchar('\n');
+		_putchar('\n');
 	}
 }
