@@ -1,43 +1,37 @@
 #include "main.h"
 
 /**
- * len - string length
- * @s: string
- * Return: result
- */
-
-int len(char *s)
-{
-	int k = 0;
-
-	while (s[k] != '\0')
-		k++;
-	return (k);
-}
-
-/**
- * create_file - creates a file
- * @filename: name of the file to create
- * @text_content: string to write to the file
- * Return: 1 or -1 (int)
- */
-
+* create_file - function creates a file
+* @filename: filename
+* @text_content: content of the text
+* Return: 1 or -1
+*/
 int create_file(const char *filename, char *text_content)
 {
-	int openfile;
-	int content_len;
+	int fd;
+	int nletters;
+	int rwr;
 
 	if (!filename)
 		return (-1);
 
-	if (text_content)
-		content_len = len(text_content);
+	fd = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
 
-	openfile = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
-	if (openfile == -1)
+	if (fd == -1)
 		return (-1);
 
-	write(openfile, text_content, content_len);
-	close(openfile);
+	if (!text_content)
+		text_content = "";
+
+	for (nletters = 0; text_content[nletters]; nletters++)
+		;
+
+	rwr = write(fd, text_content, nletters);
+
+	if (rwr == -1)
+		return (-1);
+
+	close(fd);
+
 	return (1);
 }
